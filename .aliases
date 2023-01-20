@@ -1,0 +1,26 @@
+#
+# Aliases file for portable sourcing
+#
+
+# zsh
+if [[ $SHELL = /bin/zsh ]]; then
+    alias zshrc='vim ~/.zshrc'
+    alias loadzrc='source ~/.zshrc'
+fi
+
+# misc
+alias aliases='vim ~/.aliases'
+alias vimrc='vim ~/.vimrc'
+alias dotconf='cd ~/.config && vim'
+
+# python
+alias py='python'
+alias pym='python -m'
+
+# unixporn
+alias i3conf='vim ~/.config/i3/config'
+alias polyconf='vim ~/.config/polybar/config'
+alias viblocks='vim ~/.i3blocks.conf'
+alias xres='vim ~/.Xresources'
+alias xrdbreload='xrdb ~/.Xresources'
+alias fetch='neofetch --crop_mode fit'
