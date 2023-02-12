@@ -12,6 +12,10 @@ fi
 alias aliases='vim ~/.aliases'
 alias vimrc='vim ~/.vimrc'
 alias dotconf='cd ~/.config && vim'
+alias waifu2x='sh ~/Projects/utils/waifu2x.sh'
+
+# opens new urxvt window for vim without borders
+# alias vim='urxvt -b 0 -e vim'
 
 # python
 alias py='python'
@@ -19,7 +23,7 @@ alias pym='python -m'
 
 # unixporn
 alias i3conf='vim ~/.config/i3/config'
-alias polyconf='vim ~/.config/polybar/config'
+alias polyconf='vim ~/.config/polybar/config.ini'
 alias viblocks='vim ~/.i3blocks.conf'
 alias xres='vim ~/.Xresources'
 alias xrdbreload='xrdb ~/.Xresources'

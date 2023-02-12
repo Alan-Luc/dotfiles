@@ -24,6 +24,7 @@ bindsym Control+Shift+p exec maim -i $(xdotool getactivewindow) ~/Pictures/Scree
 bindsym $mod+o exec osu-wine
 bindsym $mod+Shift+n exec notion-app
 bindsym $mod+Shift+c --release exec farge --notify
+bindsym $mod+p exec pcmanfm
 
 # Media volume controls
 bindsym XF86AudioMute exec amixer sset 'Master' toggle
@@ -175,7 +176,7 @@ exec "setxkbmap -layout us,lt"
 
 exec_always --no-startup-id compton -f --config ~/.config/compton.conf
 #exec_always --no-startup-id wal -i ~/Pictures/pp/saria\ and\ silence@8x.png -o ~/.config/dunst/reload_dunst.sh
-exec_always --no-startup-id feh --bg-scale ~/Pictures/pp/saria\ and\ silence@8x.png
+exec_always --no-startup-id feh --bg-scale ~/Pictures/pp/miku@4x.png
 exec_always xrdb ~/.Xresources
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 

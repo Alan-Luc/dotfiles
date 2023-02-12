@@ -16,7 +16,7 @@ Xft.lcdfilter: lcddefault
 *.background:       #151b11
 emacs*foreground:   #ebe5e1
 emacs*background:   #151b11
-Vim.internalBorder: 0
+vim*internalBorder: 0
 URxvt*foreground:   #ebe5e1
 XTerm*foreground:   #ebe5e1
 UXTerm*foreground:  #ebe5e1
@@ -28,39 +28,74 @@ XTerm*cursorColor:  #ebe5e1
 UXTerm*cursorColor: #ebe5e1
 URxvt*borderColor:  [100]#151b11
 
-! Colors 0-15.
-*.color0: #151b11
-*color0:  #151b11
-*.color1: #848A84
-*color1:  #848A84
-*.color2: #ABA497
-*color2:  #ABA497
-*.color3: #CEB2A5
-*color3:  #CEB2A5
-*.color4: #BBC1AA
-*color4:  #BBC1AA
-*.color5: #D1C6B6
-*color5:  #D1C6B6
-*.color6: #D6D0CA
-*color6:  #D6D0CA
-*.color7: #ebe5e1
-*color7:  #ebe5e1
-*.color8: #a4a09d
-*color8:  #a4a09d
-*.color9: #848A84
-*color9:  #848A84
-*.color10: #ABA497
-*color10:  #ABA497
-*.color11: #CEB2A5
-*color11:  #CEB2A5
-*.color12: #BBC1AA
-*color12:  #BBC1AA
-*.color13: #D1C6B6
-*color13:  #D1C6B6
-*.color14: #D6D0CA
-*color14:  #D6D0CA
-*.color15: #ebe5e1
-*color15:  #ebe5e1
+! Colors 0-15 arknights bg.
+! *.color0: #151b11
+! *color0:  #151b11
+! *.color1: #848A84
+! *color1:  #848A84
+! *.color2: #ABA497
+! *color2:  #ABA497
+! *.color3: #CEB2A5
+! *color3:  #CEB2A5
+! *.color4: #BBC1AA
+! *color4:  #BBC1AA
+! *.color5: #D1C6B6
+! *color5:  #D1C6B6
+! *.color6: #D6D0CA
+! *color6:  #D6D0CA
+! *.color7: #ebe5e1
+! *color7:  #ebe5e1
+! *.color8: #a4a09d
+! *color8:  #a4a09d
+! *.color9: #848A84
+! *color9:  #848A84
+! *.color10: #ABA497
+! *color10:  #ABA497
+! *.color11: #CEB2A5
+! *color11:  #CEB2A5
+! *.color12: #BBC1AA
+! *color12:  #BBC1AA
+! *.color13: #D1C6B6
+! *color13:  #D1C6B6
+! *.color14: #D6D0CA
+! *color14:  #D6D0CA
+! *.color15: #ebe5e1
+! *color15:  #ebe5e1
+
+
+! Colors 0-15 miku bg.
+*.color0: #0A0C0D
+*color0:  #0A0C0D
+*.color1: #5A5D61
+*color1:  #5A5D61
+*.color2: #A85749
+*color2:  #A85749
+*.color3: #4E5B9E
+*color3:  #4E5B9E
+*.color4: #9F9596
+*color4:  #9F9596
+*.color5: #89AA85
+*color5:  #89AA85
+*.color6: #D6C3B3
+*color6:  #D6C3B3
+*.color7: #eee8e2
+*color7:  #eee8e2
+*.color8: #a6a29e
+*color8:  #a6a29e
+*.color9: #5A5D61
+*color9:  #5A5D61
+*.color10: #A85749
+*color10:  #A85749
+*.color11: #4E5B9E
+*color11:  #4E5B9E
+*.color12: #9F9596
+*color12:  #9F9596
+*.color13: #89AA85
+*color13:  #89AA85
+*.color14: #D6C3B3
+*color14:  #D6C3B3
+*.color15: #eee8e2
+*color15:  #eee8e2
 
 ! Black color that will not be affected by bold highlighting.
 *.color66: #151b11
@@ -95,6 +130,7 @@ URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
 URxvt*cursorBlink:                true
 URxvt*saveLines:                  5000
+URxvt.geometry: 									100x100
 
 ! for 'fake' transparency (without Compton) uncomment the following three lines
 ! URxvt*inheritPixmap:            true
@@ -196,7 +232,7 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 ! URxvt*transient-for:              windowid
 ! URxvt*override-redirect:          boolean
 ! URxvt*hold:                       boolean
-! URxvt*externalBorder:           30  
+! URxvt*externalBorder:           	30  
 URxvt*internalBorder:             30
 ! URxvt*borderLess:                 true
 URxvt*lineSpace:                  2
@@ -240,7 +276,7 @@ URxvt*letterSpace:                1
 ! URxvt*tab-fg:                     colour
 ! URxvt*tabbar-bg:                  colour
 ! URxvt*tabbar-fg:                  colour
-! URxvt*url-launcher:               string
+URxvt*url-launcher:               /usr/bin/firefox
 
 ! The Terminus font uses the following X-names:
 ! -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
