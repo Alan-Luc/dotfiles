@@ -9,9 +9,11 @@ set laststatus=2
 set t_Co=256
 set nobackup
 set nowritebackup
-set updatetime=300
+set updatetime=50
 set signcolumn=yes
-
+set is hls
+set scrolloff=10
+let mapleader = ","
 
 " Vim-Plug settings
 " run plug install if there are missing plugins
@@ -20,30 +22,61 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 	\| endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
-Plug 'TheNiteCoder/mountaineer.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
-" Plug 'tmsvg/pear-tree', {'branch': 'master'}
 Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-vinegar'
-Plug 'vim-ruby/vim-ruby'
+Plug 'haya14busa/is.vim'
+Plug 'osyo-manga/vim-over'
 Plug 'dense-analysis/ale'
-Plug 'lambdalisue/fern.vim'
 Plug 'miyakogi/conoline.vim'
+Plug 'mbbill/undotree'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'}
+" Plug 'tpope/vim-endwise'
+" Plug 'morhetz/gruvbox'
+" Plug 'TheNiteCoder/mountaineer.vim'
+" Plug 'tmsvg/pear-tree', {'branch': 'master'}
+" Plug 'lambdalisue/fern.vim'
+" Plug 'tpope/vim-rails'
+" Plug 'vim-ruby/vim-ruby'
+" Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 call plug#end()
 
+" Convenient vim binds and re-binds "
+nnoremap <silent><F2> :tabp<CR>
+nnoremap <silent><F3> :tabn<CR>
+
+" move up and down by a page and center cursor
+" ty primeagen
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap <S-j> mzJ`z
+nnoremap <n> nzzzv
+nnoremap <N> Nzzzv
+xnoremap <leader>p "_dP
+nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+nnoremap <silent><leader>x <cmd>!chmod +x %<CR>
+
+
+" move lines up and down
+xnoremap <silent><S-j> :m '>+1<CR>gv=gv
+xnoremap <silent><S-k> :m '<-2<CR>gv=gv
+
+" copy to clipboard and copy last yank to clipboard
+xnoremap <silent><F12> :w !xclip -selection clipboard<CR><CR>
+nnoremap <silent><F11> :call system('xclip -selection clipboard', @0)<CR>
+
+" OTHER Plugin settings "
+" vim-over
+nnoremap <silent><C-h> :OverCommandLine<CR>
+" conoline settings
 let g:conoline_auto_enable = 1
 let g:conoline_use_colorscheme_default_normal=1
 
@@ -65,35 +98,22 @@ let g:lightline = {
   \             [ 'filename', 'gitbranch', 'readonly', 'modified' ] ]
   \ },
   \ 'component_function': {
-  \   'gitbranch': 'FugitiveHead'
+  \   'gitbranch': 'FugitiveHead',
   \ },
   \ }
 
 " FZF settings
-nmap <C-f> :FZF<CR>
-nmap <C-p> :Rg<CR>
+nnoremap <C-f> :FZF<CR>
+nnoremap <C-p> :Rg<CR>
+nnoremap <leader>g :GFiles<CR>
 
-" Convenient vim binds and re-binds"
-nmap <F2> :tabp<CR>
-nmap <F3> :tabn<CR>
-
-" move up and down by a page and center cursor
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
-
-" move lines up and down
-nnoremap <silent><C-Down> :m+<CR>
-nnoremap <silent><C-Up> :m-2<CR>
-inoremap <silent><C-Down> <Esc>:m+<CR>
-inoremap <silent><C-Up> <Esc>:m-2<CR>
-
-" copy to clipboard and copy last yank to clipboard
-xnoremap <silent><F12> :w !xclip -selection clipboard<CR><CR>
-nnoremap <silent><F11> :call system('xclip -selection clipboard', @0)<CR>
+" Undotree settings
+nnoremap <silent><F5> :UndotreeToggle<CR>
 
 
 " COC Settings "
 " TODO: cleanup coc settings
+let g:coc_default_semantic_highlight_groups = 1
 
 " use <tab> to trigger completion and navigate to the next complete item
 function! CheckBackspace() abort
