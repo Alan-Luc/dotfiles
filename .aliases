@@ -4,18 +4,48 @@
 
 # zsh
 if [[ $SHELL = /bin/zsh ]]; then
-    alias zshrc='vim ~/.zshrc'
-    alias loadzrc='source ~/.zshrc'
+    alias zrc='vim ~/.zshrc'
+    alias lrc='source ~/.zshrc'
 fi
 
 # misc
+# alias vim='neovide'
+alias vim='nvim'
 alias aliases='vim ~/.aliases'
+alias nvimrc='cd ~/.config/nvim && vim .'
 alias vimrc='vim ~/.vimrc'
 alias dotconf='cd ~/.config && vim'
+alias tmuxconf='vim ~/.tmux.conf'
 alias waifu2x='sh ~/Projects/utils/waifu2x.sh'
+alias decode='_decode() { echo "$1" | base64 -d | xclip -selection clipboard ;}; _decode'
+alias rm='gomi'
+alias pacs="sudo pacman -S"
+alias pacup="sudo pacman -Syu"
+alias pacf="pacman -Ss"
+alias pacq="pacman -Q"
+alias cosu='cd /home/alan/projects/usr/bin/ && ./cosu-trainer'
+alias osumem='cd /home/alan/projects/usr/bin/ && sudo ./osumem'
+alias lg='lazygit'
+alias tlp='sudo tlp'
+alias sc='soundcloud-dl'
+alias dg='sudo manjaro-downgrade'
+alias npm='pnpm'
+alias npx='pnpm exec'
 
 # opens new urxvt window for vim without borders
 # alias vim='urxvt -b 0 -e vim'
+
+
+# git
+alias gls='git status'
+
+# dev
+alias dev='cd ~/projects/noname_on_rails && ./bin/dev'
+alias docker='sudo docker'
+
+# tmux
+alias clogdev='cd ~/projects/clog && sh dev.sh'
+alias attach='tmux attach-session -t'
 
 # python
 alias py='python'
@@ -27,4 +57,6 @@ alias polyconf='vim ~/.config/polybar/config.ini'
 alias viblocks='vim ~/.i3blocks.conf'
 alias xres='vim ~/.Xresources'
 alias xrdbreload='xrdb ~/.Xresources'
-alias fetch='neofetch --crop_mode fit'
+# alias fetch='neofetch --crop_mode fit'
+alias fetch='fastfetch'
+alias termconf="vim ~/.config/kitty/kitty.conf"
