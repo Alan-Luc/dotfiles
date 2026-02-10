@@ -14,9 +14,11 @@ export PATH="$HOME/.local/bin/:$PATH"
 plugins=(
   archlinux
 	git-prompt
+	git
   command-not-found
-  git
   sudo
+	zsh-autosuggestions
+	zsh-syntax-highlighting
 )
 
 ZSH_THEME=dallas
@@ -36,6 +38,7 @@ PROMPT='%~ %F{red}$%f '
 source ~/.aliases
 # setopt COMPLETE_ALIASES
 
+source <(fzf --zsh)
 # index PATH on tab completion
 zstyle ':completion:*' rehash true
 
@@ -69,7 +72,6 @@ export PATH=$PATH:$GOPATH/bin
 source ~/.cache/wal/colors-tty.sh
 # vim: sw=4
 
-
 # osu trainer
 export OSU_SONG_FOLDER=/home/alan/.local/share/osu-wine/osu!/Songs
 
@@ -79,8 +81,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+#
 
 # pnpm
 export PNPM_HOME="/home/alan/.local/share/pnpm"
@@ -89,3 +90,11 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# eww config
+export EWWPATH=$HOME/projects/eww/target/release/
+export PATH=$PATH:$EWWPATH
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
